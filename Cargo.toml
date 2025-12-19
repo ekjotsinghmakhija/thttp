@@ -1,0 +1,31 @@
+[workspace]
+members = [
+    "packages/test-http",
+    "packages/test-http-fmt",
+    "packages/test-http-core",
+]
+resolver = "2"
+
+[workspace.package]
+version = "1.0.0"
+authors = ["Ekjot Singh <ekjotmakhija@gmail.com>"]
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/ekjotsinghmakhija/thttp"
+homepage = "https://github.com/ekjotsinghmakhija/thttp"
+documentation = "https://github.com/ekjotsinghmakhija/thttp"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[workspace.lints.rust]
+warnings = "deny"
+
+[workspace.lints.clippy]
+empty_structs_with_brackets = "deny"
+manual_string_new = "deny"
+semicolon_if_nothing_returned = "deny"
+wildcard-imports = "deny"
